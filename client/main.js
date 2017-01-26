@@ -1,24 +1,26 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
 
-import './main.html';
-
-document.title = 'Checkers Challenge';
 
 Template.hello.onCreated(function helloOnCreated() {
   // counter starts at 0
-  this.counter = new ReactiveVar(0);
+  this.increment = new ReactiveVar(0);
+  this.decrement = new ReactiveVar(10);
 });
 
 Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
+  increment : function inc(){
+    return Template.instance().increment.get();
+  },
+  decrement : function dec(){
+	  return Template.instance().decrement.get();
   },
 });
 
 Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
+  'click .bt1' : function(event, instance) {
+    // increment the var when button is clicked
+    instance.increment.set(instance.increment.get() + 1);
   },
+  'click .bt2' : function(event, instance){
+	  instance.decrement.set(instance.decrement.get() - 1);
+  }
 });
