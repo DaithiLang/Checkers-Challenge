@@ -1,0 +1,4 @@
+public/images = images
+client/designView = html
+client/lib = js
+client/stylesheet = css
