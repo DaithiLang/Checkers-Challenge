@@ -23,7 +23,7 @@ color: #333;
 
 
 body {
-    background-image: url("images/checkerboard_red.png");
+    background-image: url("/public/checkerboard_red.png");
 background-size: 300% 500%;
 }
 
