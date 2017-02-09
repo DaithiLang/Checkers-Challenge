@@ -1,0 +1,45 @@
+/* CSS declarations go here */
+
+
+
+.navbar-default {
+background-color: white;
+border-collor: black;
+}
+.navbar-default .navbar-brand {
+color: #777;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+color : #5E5E5E;
+}
+.navbar-default .navbar-brand > li > a {
+color: #777;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+color: #333;
+}
+
+
+body {
+    background-image: url("/public/checkerboard_red.png");
+background-size: 300% 500%;
+}
+
+h1 {
+color: white
+
+}
+p {
+color: black;
+}
+
+th{
+    padding: 45px;
+    background-color:blanchedalmond;
+}
+
+h2 {
+color: white
+}
