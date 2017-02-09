@@ -20,14 +20,16 @@ shell-server@0.2.1            # Server-side component of the `meteor shell` comm
 
 twbs:bootstrap
 iron:router
-accounts-password
-stylus
+accounts-password@1.3.3
+stylus@2.513.8
 ian:accounts-ui-bootstrap-3
-less
-accounts-facebook
-accounts-google
-accounts-github
-accounts-twitter
+less@2.7.8
+accounts-facebook@1.0.11
+accounts-google@1.0.11
+accounts-github@1.0.11
+accounts-twitter@1.1.12
 themeteorchef:jquery-validation
 practicalmeteor:mocha
 aldeed:simple-schema
+email
+accounts-base
