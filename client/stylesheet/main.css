@@ -1,0 +1,89 @@
+/* CSS declarations go here */
+
+
+
+.navbar-default {
+background-color: black;
+border-color: white;
+}
+.navbar-default .navbar-brand {
+color: white;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+color : white;
+}
+.navbar-default .navbar-brand > li > a {
+color: white;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+color: white;
+}
+
+
+body {
+    background-image: url("images/checkerboard_red.png");
+background-size: 300% 599%;
+}
+
+h1 {
+color: white
+
+}
+p {
+color: black;
+text-align: center;
+padding: 50px; 
+min-height: 310px;  
+font-size: 150%;
+background-color:blanchedalmond ; 
+}
+
+#id1{
+    padding: 10px;
+    background-color:blanchedalmond;
+    float:left;
+}
+
+h2 {
+color: black
+}
+
+#id2{
+    width:200px;
+    height:200px;
+    border:10px;
+    margin-top: 20px;
+}
+
+#para{
+    margin-right: 20px;
+    width: 30%;
+    float:right;
+}
+
+#fullPara{
+    float:center;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom:20px;
+}
+
+#img{
+    position: relative;
+    width: 30%;
+    margin-left: 20px;
+}
+
+#loc{
+    margin-top: 30px;
+    margin-left: 450px;  
+}
+
+#text{
+    background-color:blanchedalmond;
+    margin-left: 450px;
+    margin-right: 485px;
+    text-align: center;
+}
