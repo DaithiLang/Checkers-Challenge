@@ -37,11 +37,65 @@
     </div>
 </template>
 
-<template name="contactUs">
+<!--<template name="contactUs">
     <div id="fullPara">
     <p>You can contact us at ThisIsAFakeEmail@nuigalway.ie</p>
     </div>
-
+</template>-->
+<template name="contactUs">
+    <div class="well col-xs-6 col-xs-offset-3">
+    <div class="row col-xs-10 col-xs-offset-1">
+        <form class="form-horizontal" role="form" id="postForm">
+            <div class="row">
+            <div class="form-group">
+                <div class=" col-xs-12" id="well-post">
+                    <textarea class="form-control required" rows="3" id="inputPost"
+                              placeholder="Say Hi " maxlength="140"></textarea>
+                    <label id="charRemainder" for="inputPost">{{charsRemaining}}</label>
+                </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-3">
+                        <!--Camera-->
+                        <i class="fa fa-camera-retro fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-xs-3">
+                        <!--Video-->
+                        <i class="fa fa-video-camera fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-xs-3">
+                        <i class="fa fa-bar-chart fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-xs-3">
+                        <button type="submit" class="btn btn-primary">Post</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+    <div class ="row col-sm-8 col-sm-offset-2 textPost">
+        <div class="row">
+        {{#each posts}}
+            <div class="well">
+                <div class="row">
+                    <div class="col-sm-2 pull-left">
+                        
+                    </div>
+                    <div class="col-sm-3 pull-right">
+                    {{timeDiff (date)}}
+                    </div>
+                </div>
+                <div class="row spacer">
+                    <input class="form-control hidden" type="text" id="edit{{_id}}" value={{post}}>
+                    <div id="post{{_id}}">
+                    {{post}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
 </template>
 
 <template name="game">

@@ -1,26 +1,45 @@
+if (Meteor.isClient){
+Meteor.subscribe('userPosts');
 
-
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.increment = new ReactiveVar(0);
-  this.decrement = new ReactiveVar(10);
+Template.contactUs.helpers({
+    charsRemaining: function () {
+        return Session.get('CharactersRemaining');
+    },
+    posts : function () {
+        return Posts.find({}, {sort: {date: -1}});
+    },
+    timeDiff : function (postDate) {
+        var timeDiff = new Date().getTime() - postDate.getTime();
+        var diffDays = Math.floor(timeDiff / (1000 * 3600 * 24));
+        var diffHours = Math.floor(timeDiff  / (1000 * 3600));
+        var diffMins = Math.floor(timeDiff  / (1000 * 60));
+        var diffSecs = Math.floor(timeDiff  / (1000));
+        
+        if (diffDays > 0)
+             return ("about " + diffDays + "d ago");
+        else if(diffHours > 0)
+            return ("about " + diffHours +"h ago");
+        else if(diffMins > 0 )
+            return ("about " + diffMins + "m ago");
+        else if(diffSecs > 0)
+            return ("about " + diffSecs + "s ago");
+    }
 });
-
-Template.hello.helpers({
-  increment : function inc(){
-    return Template.instance().increment.get();
-  },
-  decrement : function dec(){
-	  return Template.instance().decrement.get();
-  },
+Template.contactUs.onRendered(function () {
+    $("#postForm").validate();
 });
-
-Template.hello.events({
-  'click .bt1' : function(event, instance) {
-    // increment the var when button is clicked
-    instance.increment.set(instance.increment.get() + 1);
-  },
-  'click .bt2' : function(event, instance){
-	  instance.decrement.set(instance.decrement.get() - 1);
-  }
+Template.contactUs.events({
+    'keyup #inputPost': function (event) {
+        var inputText = event.target.value;
+        Session.set("CharactersRemaining", (140-inputText.length) + "characters remaining");
+        
+    },
+    'submit #postForm' : function(event){
+        event.preventDefault();
+        var post = event.target.inputPost.value;
+        event.target.reset();
+        Session.set("CharactersRemaining", 140 + "charaters remaining");
+        Meteor.call('insertPost', post);
+    }
 });
+}
