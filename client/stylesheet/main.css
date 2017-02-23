@@ -24,7 +24,7 @@ color: white;
 
 body {
     background-image: url("images/checkerboard_red.png");
-background-size: 300% 599%;
+background-size: 300% 600%;
 }
 
 h1 {
@@ -85,4 +85,13 @@ color: black
     margin-left: 450px;
     margin-right: 485px;
     text-align: center;
+}
+
+#form{
+   color: black;
+text-align: center;
+padding: 50px; 
+min-height: 310px;  
+font-size: 150%;
+background-color:blanchedalmond ;  
 }
