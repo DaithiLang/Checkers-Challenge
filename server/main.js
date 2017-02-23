@@ -1,5 +1,10 @@
 import { Meteor } from 'meteor/meteor';
 
+Meteor.publish('playerNames', function() {
+    // {} as the first argument of find will return all.
+    return Meteor.users.find({}, {fields: {username: 1}});
+});
+
 Meteor.startup(() => {
   // code to run on server at startup
     
