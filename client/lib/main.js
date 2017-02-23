@@ -1,3 +1,5 @@
+Meteor.subscribe('playerNames');
+
 if (Meteor.isClient){
 Meteor.subscribe('userPosts');
 
