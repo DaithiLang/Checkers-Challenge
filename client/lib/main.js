@@ -1,9 +1,9 @@
-Meteor.subscribe('playerNames');
+//Meteor.subscribe('playerNames');
 
 if (Meteor.isClient){
 Meteor.subscribe('userPosts');
 
-Template.contactUs.helpers({
+Template.game.helpers({
     charsRemaining: function () {
         return Session.get('CharactersRemaining');
     },
@@ -25,12 +25,25 @@ Template.contactUs.helpers({
             return ("about " + diffMins + "m ago");
         else if(diffSecs > 0)
             return ("about " + diffSecs + "s ago");
+    },
+    checked : function(users){
+        if($.inArray(Meteor.userId(), users) > -1)
+            return true;
+        else
+            return false;
+    },
+    userCreated : function (createdBy){
+        if(createdBy == Meteor.userId())
+            return true;
+        else
+            return false;
+        
     }
 });
-Template.contactUs.onRendered(function () {
+Template.game.onRendered(function () {
     $("#postForm").validate();
 });
-Template.contactUs.events({
+Template.game.events({
     'keyup #inputPost': function (event) {
         var inputText = event.target.value;
         Session.set("CharactersRemaining", (140-inputText.length) + "characters remaining");
@@ -44,4 +57,71 @@ Template.contactUs.events({
         Meteor.call('insertPost', post);
     }
 });
+    Template.game.events({
+'keyup #inputPost': function(event) {
+    var inputText = event.target.value;
+    Session.set("CharactersRemaining", 140 + "charaters remaining");
+},
+        'submit #postForm': function(event) {
+            event.preventDefault();
+            var post = event.target.innerPost.value;
+            $('#inputPost').val('');
+            Session.set("CharactersRemaining", 140 + "charaters remaining");
+            Meteor.call('innerPost', post);
+        },
+        'click .likeBox' : function(event) {
+            if (event.toElement.checked){
+                Meteor.call('likePost', this._id);
+            }
+            else{
+                Meteor.call('unlikePost', this._id);
+            }
+        },
+'likePost' : function(postId){
+    var update = true;
+    
+    Posts.update(
+    {_id:postId},
+        {$addToSet : {"likes.users":this.userId}}
+    ),function(error, result) {
+        if (error)
+            {
+                update = false;
+            }
+        if (result)
+            {
+                update = true;
+            }
+    };
+    if(update) (
+    {_id:postId},
+        {$inc: {"likes.totalLikes": +1}}
+    ), function (error, result){
+        if (error) console.log(error);
+        if (result) console.log(result);                       
+       };
+      },
+        'unlikePost':function(postId){
+            Posts.update({_id:postId},
+                {$inc : {"likes.totalLikes":-1}}),
+                function (error, result){
+        if (error) console.log(error);
+        if (result) console.log(result);                       
+       };
+            Post.update(
+            {_id:postId},
+                {$pop : {"likes.users" : this.userId}}
+            ),function (error, result){
+        if (error) console.log(error);
+        if (result) console.log(result);                       
+       };
+        },
+        'deletePost' : function(postId){
+            Post.remove(postId);
+        },
+        'updatePost' : function(postObj){
+            Posts.update({_id:postObj.id}, {$set: {post : postObj.post}});
+        }
+    });
 }
+    
