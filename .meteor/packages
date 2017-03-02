@@ -31,6 +31,7 @@ accounts-twitter@1.2.0
 themeteorchef:jquery-validation
 practicalmeteor:mocha
 aldeed:simple-schema
+templates:forms
 fortawesome:fontawesome
 session@1.1.7
 facebook-config-ui
