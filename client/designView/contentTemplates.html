@@ -37,12 +37,22 @@
     </div>
 </template>
 
-<!--<template name="contactUs">
-    <div id="fullPara">
-    <p>You can contact us at ThisIsAFakeEmail@nuigalway.ie</p>
-    </div>
-</template>-->
+
 <template name="contactUs">
+   <h1> DAVE THE RAVE LANGLEY 3===- </h1>
+    
+</template>
+
+
+
+<template name="game">
+    <p>Welcome To Checkers Challenge. <br>I hope you enjoy our very first game applcation. This has been in the making for some time now and I hope you enjoy what we have come up with!</p>
+    {{#if currentUser}}
+        <h1>List of Players</h1>
+            {{#each playerNames}}
+                {{username}}
+            {{/each}}
+    {{/if}}
     <div class="well col-xs-6 col-xs-offset-3">
     <div class="row col-xs-10 col-xs-offset-1">
         <form class="form-horizontal" role="form" id="postForm">
@@ -80,7 +90,7 @@
             <div class="well">
                 <div class="row">
                     <div class="col-sm-2 pull-left">
-                        
+                                                {{>avatar userId = createdBy shape = "rounded"}}
                     </div>
                     <div class="col-sm-3 pull-right">
                     {{timeDiff (date)}}
@@ -90,20 +100,42 @@
                     <input class="form-control hidden" type="text" id="edit{{_id}}" value={{post}}>
                     <div id="post{{_id}}">
                     {{post}}
+                        <div class="row spacer">
+        <div class="col-xs-3">
+            <div class="likebox">
+                <input type="checkbox" id="like{{_id}}" checked={{checked (likes.users)}}>
+                <label for="like{{_id}}">
+                    {{likes.totalLikes}}
+                </label>
+            </div>     
+        </div>
+        <div class="col-xs-3">
+        <div class="retweetBox">
+            <input type="checkbox" id="ret{{_id}}" checked= {{checked (retweet.users)}}>
+            <label for="ret{{_id}}"> 
+                {{retweets.totalRetweets}}
+            </label>
+            </div>
+        </div>
+        <div class="col-xs-3">
+        <a class="btn btn-trash">
+            <i class="fa fa-trash"></i>
+            </a>
+        </div>
+        {{#if userCreated (createdBy)}}
+        <div class="col-xs-3 editBox">
+        <input type="checkbox" id="editPost{{this._id}}">
+            <label for="editPost{{this._id}}">
+            </label>
+        </div>
+        {{/if}}
+    </div>
                     </div>
                 </div>
             </div>
             {{/each}}
         </div>
+        
     </div>
-</template>
-
-<template name="game">
-    <p>Welcome To Checkers Challenge. <br>I hope you enjoy our very first game applcation. This has been in the making for some time now and I hope you enjoy what we have come up with!</p>
-    {{#if currentUser}}
-        <h1>List of Players</h1>
-            {{#each playerNames}}
-                {{username}}
-            {{/each}}
-    {{/if}}
+    
 </template>

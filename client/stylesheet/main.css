@@ -86,3 +86,31 @@ color: black
     margin-right: 485px;
     text-align: center;
 }
+input[type=checkbox]{
+    visibility: ;
+}
+.likeBox label:before{
+    content: "\f08a";
+    font-family: FontAwsome;
+    color: #3498db;
+    cursor: pointer;
+    cursor: hand;
+}
+.likeBox input[type=checkBox]:checked + label:before{
+    content: "\f004";
+    font-family: FontAwsome;
+    color: #333;
+    cursor: pointer;
+    cursor: hand;
+}
+.editBox label:before{
+    content: "\f040";
+    font-family: FontAwsome;
+    color: #3498db;
+     cursor: hand;
+}
+.editBox input[type=checkbox]:checked + label:before{
+    content: "Save";
+    color: #333;
+     cursor: : hand;
+}
