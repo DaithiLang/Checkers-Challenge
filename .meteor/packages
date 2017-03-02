@@ -32,3 +32,5 @@ themeteorchef:jquery-validation
 practicalmeteor:mocha
 aldeed:simple-schema
 templates:forms
+fortawesome:fontawesome
+session
