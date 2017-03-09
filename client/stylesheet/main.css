@@ -1,43 +1,48 @@
-/* CSS declarations go here */
-
-
-
 .navbar-default {
-background-color: black;
-border-color: white;
+    background-color: black;
+    border-color: white;
 }
 .navbar-default .navbar-brand {
-color: white;
+    color: white;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-color : white;
+    color : white;
 }
 .navbar-default .navbar-brand > li > a {
-color: white;
+    color: white;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-color: white;
+    color: white;
 }
 
 
 body {
     background-image: url("images/checkerboard_red.png");
-background-size: 300% 600%;
+    background-size: 300% 600%;
 }
 
 h1 {
-color: white
+    color: white
 
 }
+
+.bodytext {
+    color: black;
+    text-align: center;
+    padding: 50px; 
+    min-height: 310px;  
+    background-color:blanchedalmond ; 
+}
+
 p {
-color: black;
-text-align: center;
-padding: 50px; 
-min-height: 310px;  
-font-size: 150%;
-background-color:blanchedalmond ; 
+   color: black;
+   text-align: center;
+   padding: 50px; 
+   min-height: 310px;  
+   font-size: 150%;
+   background-color:blanchedalmond ; 
 }
 
 #id1{
@@ -47,7 +52,7 @@ background-color:blanchedalmond ;
 }
 
 h2 {
-color: black
+    color: black
 }
 
 #id2{
@@ -118,10 +123,10 @@ input[type=checkbox]{
 
 #form{
    color: black;
-text-align: center;
-padding: 50px; 
-min-height: 310px;  
-font-size: 150%;
-background-color:blanchedalmond ;  
+   text-align: center;
+   padding: 50px; 
+   min-height: 310px;  
+   font-size: 150%;
+   background-color:blanchedalmond ;  
 
 }
