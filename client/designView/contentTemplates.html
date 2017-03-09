@@ -3,7 +3,6 @@
     <div id="img">
      <img src="/images/checkers.jpg" id="id1" height="520" width = "540">
     </div>
-    
     <div id="para">
     <p>Click On The Image Below <br>To Start The Game
      <a href="game">
@@ -11,39 +10,33 @@
     </a>  </p>
     </div>
     </div>
-</template>
 
+</template>
 <template name="aboutUs">
 <div id="fullPara">
     <p>Four students just trying to do well in college!</p>
     </div>
-    
 </template>
-
 <template name="findUs">
     <div id="loc">
-        <iframe     
+        <iframe
   width="600"
   height="450"
   frameborder="5" style="border:5"
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC015Xb6CoOtZ4rE6p99vy1EO71cBqhR1c
     &q=nuigalway&center=53.2802539,-9.0586142&zoom=15.5" allowfullscreen>
         </iframe>
-    </div> 
+    </div>
     <div id="text">
-    <h2>Find us at NuiGalway in the IT Department!</h2>  
+    <h2>Find us at NuiGalway in the IT Department!</h2>
     </div>
 </template>
 
-
 <template name="contactUs">
-   <h1> DAVE THE RAVE LANGLEY 3===- </h1>
-    
+    <h1>DAVE THE RAVE</h1>
 </template>
-
-
-
 <template name="game">
+    
     <p>Welcome To Checkers Challenge. <br>I hope you enjoy our very first game applcation. This has been in the making for some time now and I hope you enjoy what we have come up with!</p>
     {{#if currentUser}}
         <h1>List of Players</h1>
@@ -68,6 +61,7 @@
                         <i class="fa fa-camera-retro fa-lg" aria-hidden="true"></i>
                     </div>
                     <div class="col-xs-3">
+
                         <!--Video-->
                         <i class="fa fa-video-camera fa-lg" aria-hidden="true"></i>
                     </div>
@@ -88,7 +82,6 @@
             <div class="well">
                 <div class="row">
                     <div class="col-sm-2 pull-left">
-                                                {{>avatar userId = createdBy shape = "rounded"}}
                     </div>
                     <div class="col-sm-3 pull-right">
                     {{timeDiff (date)}}
@@ -98,54 +91,11 @@
                     <input class="form-control hidden" type="text" id="edit{{_id}}" value={{post}}>
                     <div id="post{{_id}}">
                     {{post}}
-                        <div class="row spacer">
-        <div class="col-xs-3">
-            <div class="likebox">
-                <input type="checkbox" id="like{{_id}}" checked={{checked (likes.users)}}>
-                <label for="like{{_id}}">
-                    {{likes.totalLikes}}
-                </label>
-            </div>     
-        </div>
-        <div class="col-xs-3">
-        <div class="retweetBox">
-            <input type="checkbox" id="ret{{_id}}" checked= {{checked (retweet.users)}}>
-            <label for="ret{{_id}}"> 
-                {{retweets.totalRetweets}}
-            </label>
-            </div>
-        </div>
-        <div class="col-xs-3">
-        <a class="btn btn-trash">
-            <i class="fa fa-trash"></i>
-            </a>
-        </div>
-        {{#if userCreated (createdBy)}}
-        <div class="col-xs-3 editBox">
-        <input type="checkbox" id="editPost{{this._id}}">
-            <label for="editPost{{this._id}}">
-            </label>
-        </div>
-        {{/if}}
-    </div>
                     </div>
                 </div>
             </div>
             {{/each}}
         </div>
-        
     </div>
-
-
 </template>
 
-<template name="game">
-    <p>Welcome To Checkers Challenge. <br>I hope you enjoy our very first game applcation. This has been in the making for some time now and I hope you enjoy what we have come up with!</p>
-    {{#if currentUser}}
-        <h1>List of Players</h1>
-            {{#each playerNames}}
-                {{username}}
-            {{/each}}
-    {{/if}}
-
-</template>
