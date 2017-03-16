@@ -36,15 +36,19 @@
     <h1>DAVE THE RAVE</h1>
 </template>
 <template name="game">
-    
-    <p>Welcome To Checkers Challenge. <br>I hope you enjoy our very first game applcation. This has been in the making for some time now and I hope you enjoy what we have come up with!</p>
-    {{#if currentUser}}
-        <h1>List of Players</h1>
-            {{#each playerNames}}
-                {{username}}
-            {{/each}}
-    {{/if}}
-    <div class="well col-xs-6 col-xs-offset-3">
+  <div class="bodytext">
+          <p>Welcome To Checkers Challenge. <br>I hope you enjoy our very first game applcation. This has been in the making for some time now and I hope you enjoy what we have come up with!</p>
+          {{#if currentUser}}
+              <h2>List of Players</h2>
+                  <ul>
+                      {{#each playerNames}}
+                          <li>{{username}}</li>
+                      {{/each}}
+                  </ul>
+          {{/if}}
+      </div>
+
+       <div class="well col-xs-6 col-xs-offset-3">
     <div class="row col-xs-10 col-xs-offset-1">
         <form class="form-horizontal" role="form" id="postForm">
             <div class="row">
@@ -55,21 +59,10 @@
                     <label id="charRemainder" for="inputPost">{{charsRemaining}}</label>
                 </div>
                 </div>
+                
                 <div class="form-group">
-                    <div class="col-xs-3">
-                        <!--Camera-->
-                        <i class="fa fa-camera-retro fa-lg" aria-hidden="true"></i>
-                    </div>
-                    <div class="col-xs-3">
-
-                        <!--Video-->
-                        <i class="fa fa-video-camera fa-lg" aria-hidden="true"></i>
-                    </div>
-                    <div class="col-xs-3">
-                        <i class="fa fa-bar-chart fa-lg" aria-hidden="true"></i>
-                    </div>
-                    <div class="col-xs-3">
-                        <button type="submit" class="btn btn-primary">Post</button>
+                    <div class="col-xs-1">
+                        <button type="submit" class="btn btn-primary">Send</button>
                     </div>
                 </div>
             </div>
@@ -82,6 +75,7 @@
             <div class="well">
                 <div class="row">
                     <div class="col-sm-2 pull-left">
+                        {{>avatar userId = createdBy shape = "rounded"}}
                     </div>
                     <div class="col-sm-3 pull-right">
                     {{timeDiff (date)}}
@@ -89,13 +83,39 @@
                 </div>
                 <div class="row spacer">
                     <input class="form-control hidden" type="text" id="edit{{_id}}" value={{post}}>
-                    <div id="post{{_id}}">
+                    <div id="post{{_id}} ">
                     {{post}}
+                        <div class="row spacer">
+        <div class="col-xs-3">
+            <div class="fa fa-thumbs-o-up">
+                <input type="checkbox" id="like{{_id}}" checked = {{checked (likes.users)}}>
+                <label for="like{{_id}}">
+                    {{likes.totalLikes}}
+                </label>
+            </div>
+        </div>
+        <div class="col-xs-3">
+        <a class="btn btn-trash" id="deletePost{{_id}}">
+            <i class="fa fa-trash"></i>
+            </a>
+            <label for="deletePost{{_id}}">
+            </label>
+
+        </div>
+        {{#if userCreated (createdBy)}}
+        <div class="col-xs-3 fa fa-pencil-square-o" aria-hidden="true">
+        <input type="checkbox" id="editPost{{this._id}}">
+            <label for="editPost{{this._id}}">
+            </label>
+        </div>
+        {{/if}}
+    </div>
                     </div>
                 </div>
             </div>
             {{/each}}
         </div>
-    </div>
-</template>
 
+    </div>
+
+</template>

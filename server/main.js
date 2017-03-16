@@ -7,7 +7,7 @@ Meteor.publish('playerNames', function() {
 
 Meteor.startup(() => {
   // code to run on server at startup
-    
+
 Meteor.methods({
     'insertPost' : function(post){
         Posts.insert(
@@ -29,7 +29,52 @@ Meteor.methods({
             if(result)console.log(result);
         }
         );
-    }
+    },
+    'likePost': function(postId){
+      var update = true;
+
+      Posts.update(
+      {_id:postId},
+          {$addToSet : {"likes.users":this.userId}}
+      ),function(error, result) {
+          if (error)
+              {
+                  update = false;
+              }
+          if (result)
+              {
+                  update = true;
+              }
+      };
+      if(update) (
+      {_id:postId},
+          {$inc: {"likes.totalLikes": + 1}}
+      ), function (error, result){
+          if (error) console.log(error);
+          if (result) console.log(result);
+         };
+        },
+            'unlikePost':function(postId){
+                Posts.update({_id:postId},
+                    {$inc : {"likes.totalLikes": - 1}}),
+                    function (error, result){
+            if (error) console.log(error);
+            if (result) console.log(result);
+           };
+                Post.update(
+                {_id:postId},
+                    {$pop : {"likes.users" : this.userId}}
+                ),function (error, result){
+            if (error) console.log(error);
+            if (result) console.log(result);
+           };
+            },
+            'deletePost' : function(postId){
+                Post.remove(postId);
+            },
+            'updatePost' : function(postObj){
+                Posts.update({_id:postObj.id}, {$set: {post : postObj.post}});
+            }
 })
     Meteor.publish('userPosts', function(){
     return Posts.find();
