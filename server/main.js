@@ -18,10 +18,6 @@ Meteor.methods({
             likes:{
                 totalLikes:0,
                 users:[]
-            },
-            retweets:{
-                totalRetweets:0,
-                users:[]
             }
         },
         function(error, result){
@@ -32,11 +28,9 @@ Meteor.methods({
     },
     'likePost': function(postId){
       var update = true;
-
       Posts.update(
-      {_id:postId},
-          {$addToSet : {"likes.users":this.userId}}
-      ),function(error, result) {
+      {_id:postId},{$addToSet : {"likes.users":this.userId}}),
+          function(error, result) {
           if (error)
               {
                   update = false;
@@ -47,12 +41,13 @@ Meteor.methods({
               }
       };
       if(update) (
-      {_id:postId},
-          {$inc: {"likes.totalLikes": + 1}}
-      ), function (error, result){
+      {_id:postId}),
+
+          {$inc: {"likes.totalLikes": + 1}},
+                function (error, result){
           if (error) console.log(error);
           if (result) console.log(result);
-         };
+         }
         },
             'unlikePost':function(postId){
                 Posts.update({_id:postId},

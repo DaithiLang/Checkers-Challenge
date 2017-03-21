@@ -31,18 +31,18 @@ h1 {
 .bodytext {
     color: black;
     text-align: center;
-    padding: 50px; 
-    min-height: 310px;  
-    background-color:blanchedalmond ; 
+    padding: 50px;
+    min-height: 310px;
+    background-color:blanchedalmond ;
 }
 
 p {
    color: black;
    text-align: center;
-   padding: 50px; 
-   min-height: 310px;  
+   padding: 50px;
+   min-height: 310px;
    font-size: 150%;
-   background-color:blanchedalmond ; 
+   background-color:blanchedalmond ;
 }
 
 #id1{
@@ -96,37 +96,39 @@ input[type=checkbox]{
     visibility: ;
 }
 .likeBox label:before{
-    content: "\f08a";
+
     font-family: FontAwsome;
     color: #3498db;
-    cursor: pointer;
+
     cursor: hand;
+
 }
 .likeBox input[type=checkBox]:checked + label:before{
-    content: "\f004";
+
     font-family: FontAwsome;
     color: #333;
-    cursor: pointer;
     cursor: hand;
+
 }
 .editBox label:before{
-    content: "\f040";
+    content: "\f040"
     font-family: FontAwsome;
     color: #3498db;
      cursor: hand;
+
 }
-.editBox input[type=checkbox]:checked + label:before{
+.editBox input[type=checkbox]:checked + label:before {
     content: "Save";
     color: #333;
-     cursor: : hand;
+     cursor: hand;
 }
 
 #form{
    color: black;
    text-align: center;
-   padding: 50px; 
-   min-height: 310px;  
+   padding: 50px;
+   min-height: 310px;
    font-size: 150%;
-   background-color:blanchedalmond ;  
+   background-color:blanchedalmond ;
 
 }

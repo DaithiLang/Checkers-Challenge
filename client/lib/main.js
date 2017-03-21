@@ -52,17 +52,38 @@ Template.game.events({
     'submit #postForm' : function(event){
         event.preventDefault();
         var post = event.target.inputPost.value;
-        event.target.reset();
+      $('#inputPost').val('');
         Session.set("CharactersRemaining", (140) + "  "+ " Charaters Remaining");
         Meteor.call('insertPost', post);
     },
-    'click.likeBox' : function(event) {
+    'click .likeBox' : function(event) {
         if (event.toElement.checked){
             Meteor.call('likePost', this._id);
         }
         else{
             Meteor.call('unlikePost', this._id);
         }
+    },
+    'click .editBox input' : function (event) {
+      if(event.toElement.checked){
+        $('#edit'+this._id).removeClass('hidden');
+        $('#post'+this._id).hide();
+      }
+      else
+      {
+        var post = $('#edit'+this._id).val();
+        Meteor.call('updatePost', {id :this._id, post:post});
+        $('#edit'+this._id).addClass('hidden');
+        $('#post'+this._id).show();
+      }
+    },
+    'click .deletePost button' : function(event){
+    event.preventDefault();
+
+    var curPostId = this._id;
+    Posts.remove(curPostId);
+    return true;
+Posts.update({_id:postObj.id}, {$set: {post : postObj.post}});
     }
     });
 }
