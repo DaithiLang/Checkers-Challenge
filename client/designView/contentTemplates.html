@@ -88,21 +88,13 @@
                     <div id="post{{_id}} ">
                     {{post}}
                         <div class="row spacer">
-                          <div class="col-xs-3">
-                              <div class="fa fa-thumbs-o-up">
-                                  <label for="like{{_id}}">
-                                  <input type="checkbox" id="like{{_id}}" checked = {{checked (likes.users)}}>
-                                  {{likes.totalLikes}}
-                                  </label>
-                              </div>
-                          </div>
                           {{#if userCreated (createdBy)}}
-                          <div class="col-xs-3 editBox">
+                          <div class="col-xs-6 editBox">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                           <input type="checkbox" id="editPost{{this._id}}">
                               <label for="editPost{{this._id}} "></label><h6 class="test">Edited</h6>
                           </div>
-                          <div class="col-xs-3 deletePost">
+                          <div class="col-xs-6 deletePost">
                           <button type="submit" class="btn btn-trash" id="deletePost{{this_id}}">
                               <i class="fa fa-trash"></i>
                             </button>

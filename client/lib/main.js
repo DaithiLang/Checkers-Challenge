@@ -25,12 +25,6 @@ Template.game.helpers({
         else if(diffSecs > 0)
              return ("about " + diffSecs + "s ago");
         },
-        checked : function (users) {
-        if($.inArray(Meteor.userId(), users) > -1)
-            return true;
-        else
-            return false;
-    },
     userCreated : function (createdBy){
         if(createdBy == Meteor.userId())
             return true;
@@ -53,14 +47,6 @@ Template.game.events({
       $('#inputPost').val('');
         Session.set("CharactersRemaining", (140) + "  "+ " Charaters Remaining");
         Meteor.call('insertPost', post);
-    },
-    'click .likeBox' : function(event) {
-        if (event.toElement.checked){
-            Meteor.call('likePost', this._id);
-        }
-        else{
-            Meteor.call('unlikePost', this._id);
-        }
     },
     'click .editBox input' : function (event) {
       if(event.toElement.checked){

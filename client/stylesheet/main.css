@@ -95,21 +95,6 @@ h2 {
 input[type=checkbox]{
     visibility: ;
 }
-.likeBox label:before{
-
-    font-family: FontAwsome;
-    color: #3498db;
-
-    cursor: hand;
-
-}
-.likeBox input[type=checkBox]:checked + label:before{
-
-    font-family: FontAwsome;
-    color: #333;
-    cursor: hand;
-
-}
 .editBox label:before{
     content: "\f040"
     font-family: FontAwsome;
