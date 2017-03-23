@@ -4,4 +4,5 @@ Posts.allow({
   remove: function(userId, posts){
     return true;
   }
-})
+
+});

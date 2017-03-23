@@ -122,6 +122,9 @@ input[type=checkbox]{
     color: #333;
      cursor: hand;
 }
+.test{
+  visibility: hidden;
+}
 
 #form{
    color: black;

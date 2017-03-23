@@ -2,7 +2,6 @@ Meteor.subscribe('playerNames');
 
 if (Meteor.isClient){
 Meteor.subscribe('userPosts');
-
 Template.game.helpers({
     charsRemaining: function () {
         return Session.get('CharactersRemaining');
@@ -37,7 +36,6 @@ Template.game.helpers({
             return true;
         else
             return false;
-
     }
 });
 Template.game.onRendered(function () {
@@ -75,15 +73,13 @@ Template.game.events({
         Meteor.call('updatePost', {id :this._id, post:post});
         $('#edit'+this._id).addClass('hidden');
         $('#post'+this._id).show();
+        $("h6").removeClass("test");
       }
     },
     'click .deletePost button' : function(event){
-    event.preventDefault();
-
-    var curPostId = this._id;
-    Posts.remove(curPostId);
-    return true;
-Posts.update({_id:postObj.id}, {$set: {post : postObj.post}});
+        event.preventDefault();
+        var curPostId = this._id;
+        Posts.remove(curPostId);
     }
     });
 }

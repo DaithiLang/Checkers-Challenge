@@ -27,6 +27,7 @@ Meteor.methods({
         );
     },
     'likePost': function(postId){
+      console.log('boobs');
       var update = true;
       Posts.update(
       {_id:postId},{$addToSet : {"likes.users":this.userId}}),
@@ -41,9 +42,9 @@ Meteor.methods({
               }
       };
       if(update) (
+        Posts.update(
       {_id:postId}),
-
-          {$inc: {"likes.totalLikes": + 1}},
+      {$inc: {"likes.totalLikes":  1}}),
                 function (error, result){
           if (error) console.log(error);
           if (result) console.log(result);
@@ -64,12 +65,10 @@ Meteor.methods({
             if (result) console.log(result);
            };
             },
-            'deletePost' : function(postId){
-                Post.remove(postId);
-            },
-            'updatePost' : function(postObj){
-                Posts.update({_id:postObj.id}, {$set: {post : postObj.post}});
+            'updatePost' :function(postObj) {
+              Posts.update({_id:postObj.id}, {$set: {post : postObj.post}});
             }
+
 })
     Meteor.publish('userPosts', function(){
     return Posts.find();
