@@ -1,71 +1,73 @@
 <template name="home">
-<div>
-    <div id="img">
-     <img src="/images/checkers.jpg" id="id1" height="520" width = "540">
+    <div>
+        <div id="img">
+            <img src="/images/checkers.jpg" id="id1" height="520" width = "540">
+        </div>
+        <div id="para">
+            <!-- Should the img be taken outside the anchor tag? -->
+            <p>Click On The Image Below <br>To Start The Game
+                <a href="game">
+                    <img src="/images/timeToPlay.png" id="id2" alt="Game">
+                </a>
+            </p>
+        </div>
     </div>
-    <div id="para">
-    <p>Click On The Image Below <br>To Start The Game
-     <a href="game">
-  <img src="/images/timeToPlay.png" id="id2" alt="Game">
-    </a>  </p>
-    </div>
-    </div>
+</template>
 
-</template>
 <template name="aboutUs">
-<div id="fullPara">
-    <p>Four students just trying to do well in college!</p>
-    </div>
+    <div id="fullPara">
+        <p>Four students just trying to do well in college!</p>
+        </div>
 </template>
+
 <template name="findUs">
     <div id="loc">
         <iframe
-  width="600"
-  height="450"
-  frameborder="5" style="border:5"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC015Xb6CoOtZ4rE6p99vy1EO71cBqhR1c
-    &q=nuigalway&center=53.2802539,-9.0586142&zoom=15.5" allowfullscreen>
+    width="600" height="450"
+    frameborder="5" style="border:5"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC015Xb6CoOtZ4rE6p99vy1EO71cBqhR1c&q=nuigalway&center=53.2802539,-9.0586142&zoom=15.5"
+    allowfullscreen>
         </iframe>
     </div>
     <div id="text">
-    <h2>Find us at NuiGalway in the IT Department!</h2>
+        <h2>Find us at NuiGalway in the IT Department!</h2>
     </div>
 </template>
 
 <template name="contactUs">
     <h1>DAVE THE RAVE</h1>
 </template>
+
 <template name="game">
 
-  <div class="bodytext">
-          <p>Welcome To Checkers Challenge. <br>I hope you enjoy our very first game applcation. This has been in the making for some time now and I hope you enjoy what we have come up with!</p>
-          {{#if currentUser}}
-              <h2>List of Players</h2>
-                  <ul>
-                      {{#each playerNames}}
-                          <li>{{username}}</li>
-                      {{/each}}
-                  </ul>
-          {{/if}}
-      </div>
+    <div class="bodytext">
+        <p>Welcome To Checkers Challenge. <br>I hope you enjoy our very first game applcation. This has been in the making for some time now and I hope you enjoy what we have come up with!</p>
+        {{#if currentUser}}
+            <h2>List of Players</h2>
+                <ul>
+                    {{#each playerNames}}
+                        <li>{{username}}</li>
+                    {{/each}}
+                </ul>
+        {{/if}}
+    </div>
 
-       <div class="well col-xs-6 col-xs-offset-3">
-    <div class="row col-xs-10 col-xs-offset-3">
-        <form class="form-horizontal" role="form" id="postForm">
-            <div class="row">
-            <div class="form-group">
-                <div class=" col-xs-8" id="well-post">
-                    <textarea class="form-control required" rows="3" id="inputPost"
-                              placeholder="Say Hi " maxlength="140" ></textarea>
-                    <label id="charRemainder" for="inputPost">{{charsRemaining}}</label>
-                </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-xs-9">
-                        <button type="submit" class="btn btn-primary">Send</button>
+    <div class="well col-xs-6 col-xs-offset-3">
+        <div class="row col-xs-10 col-xs-offset-3">
+            <form class="form-horizontal" role="form" id="postForm">
+                <div class="row">
+                    <div class="form-group">
+                        <div class=" col-xs-8" id="well-post">
+                            <textarea class="form-control required" rows="3" id="inputPost" placeholder="Write a message" maxlength="140"></textarea>
+                            <label id="charRemainder" for="inputPost">{{charsRemaining}}</label>
+                        </div>
                     </div>
-                </div>
+    
+                    <div class="form-group">
+                        <div class="col-xs-9">
+                            <button type="submit" class="btn btn-primary">Send</button>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
@@ -77,35 +79,36 @@
             <div class="well">
                 <div class="row">
                     <div class="col-sm-2 pull-left">
-                    {{>avatar userId = createdBy shape = "rounded"}}
+                        {{> avatar userId = createdBy shape = "rounded"}}
                     </div>
                     <div class="col-sm-3 pull-right">
-                    {{timeDiff (date)}}
+                        {{timeDiff (date)}}
                     </div>
                 </div>
-              <div class="row spacer">
-                    <input class="form-control hidden" type="text" id="edit{{_id}}" value={{post}}>
-                    <div id="post{{_id}} ">
-                    {{post}}
-                        <div class="row spacer">
-                          {{#if userCreated (createdBy)}}
-                          <div class="col-xs-6 editBox">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                          <input type="checkbox" id="editPost{{this._id}}">
-                              <label for="editPost{{this._id}} "></label><h6 class="test">Edited</h6>
-                          </div>
-                          <div class="col-xs-6 deletePost">
-                          <button type="submit" class="btn btn-trash" id="deletePost{{this_id}}">
-                              <i class="fa fa-trash"></i>
-                            </button>
-                              <label for="deletePost{{_id}}"></label>
-                          </div>
-                          {{/if}}
-                        </div>
+            <div class="row spacer">
+                <input class="form-control hidden" type="text" id="edit{{_id}}" value={{post}}>
+                <div id="post{{_id}} ">
+                {{post}}
+                    <div class="row spacer">
+                        {{#if userCreated (createdBy)}}
+                            <div class="col-xs-6 editBox">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                <input type="checkbox" id="editPost{{this._id}}">
+                                <label for="editPost{{this._id}} "></label>
+                                <h6 class="test">Edited</h6>
+                            </div>
+                            <div class="col-xs-6 deletePost">
+                                <button type="submit" class="btn btn-trash" id="deletePost{{this_id}}">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                                <label for="deletePost{{_id}}"></label>
+                            </div>
+                        {{/if}}
                     </div>
-              </div>
+                </div>
             </div>
-                {{/each}}
+        </div>
+        {{/each}}
         </div>
     </div>
 </template>
