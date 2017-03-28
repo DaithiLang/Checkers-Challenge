@@ -37,15 +37,15 @@ h1 {
 }
 
 p {
-   color: black;
-   text-align: center;
-   padding: 50px;
-   min-height: 310px;
-   font-size: 150%;
-   background-color:blanchedalmond ;
+    color: black;
+    text-align: center;
+    padding: 50px;
+    min-height: 310px;
+    font-size: 150%;
+    background-color:blanchedalmond ;
 }
 
-#id1{
+#id1 {
     padding: 10px;
     background-color:blanchedalmond;
     float:left;
@@ -55,68 +55,68 @@ h2 {
     color: black
 }
 
-#id2{
+#id2 {
     width:200px;
     height:200px;
     border:10px;
     margin-top: 20px;
 }
 
-#para{
+#para {
     margin-right: 20px;
     width: 30%;
     float:right;
 }
 
-#fullPara{
+#fullPara {
     float:center;
     margin-right: 20px;
     margin-left: 20px;
     margin-bottom:20px;
 }
 
-#img{
+#img {
     position: relative;
     width: 30%;
     margin-left: 20px;
 }
 
-#loc{
+#loc {
     text-align: center;
 }
 
-#text{
+#text {
     background-color:blanchedalmond;
     margin-left: 450px;
     margin-right: 485px;
     text-align: center;
 }
 
-input[type=checkbox]{
+input[type=checkbox] {
     visibility: ;
 }
-.editBox label:before{
+.editBox label:before {
     content: "\f040"
-    font-family: FontAwsome;
+    font-family: FontAwesome;
     color: #3498db;
-     cursor: hand;
+    cursor: hand;
 
 }
 .editBox input[type=checkbox]:checked + label:before {
     content: "Save";
     color: #333;
-     cursor: hand;
+    cursor: hand;
 }
-.test{
-  visibility: hidden;
+.test {
+    visibility: hidden;
 }
 
-#form{
-   color: black;
-   text-align: center;
-   padding: 50px;
-   min-height: 310px;
-   font-size: 150%;
-   background-color:blanchedalmond ;
+#form {
+    color: black;
+    text-align: center;
+    padding: 50px;
+    min-height: 310px;
+    font-size: 150%;
+    background-color:blanchedalmond ;
 
 }
