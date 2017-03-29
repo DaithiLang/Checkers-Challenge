@@ -25,9 +25,9 @@
   margin-top: 1cm;
 }
 .btnss{
-  color: #fff;
-    background-color: #333;
-    border-color: #ccc;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
 }
 body {
     background-image: url("images/black.JPG");
@@ -118,18 +118,7 @@ input[type=checkbox] {
     color: #333;
     cursor: hand;
 }
-<<<<<<< HEAD
-.editBox label:before{
-    content: "\f040";
-    font-family: FontAwsome;
-    color: #3498db;
-     cursor: hand;
-}
-.editBox input[type=checkbox]:checked + label:before{
-    content: "Save";
-    color: #333;
-     cursor:hand;
-}
+
 
 #form{
    color: black;
@@ -174,8 +163,4 @@ align-content: center;
 
 #room3{
    align-content: right;
-}
-
-.test {
-    visibility: hidden;
 }

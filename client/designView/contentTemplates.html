@@ -21,7 +21,7 @@
         Liam O'Neill<br>
         Alan Fahy<br>
         Ciara McEllistrim</p>
-    </div>
+        </div>
 </template>
 
 <template name="findUs">
@@ -61,17 +61,7 @@
         <div id="room2"><a class="btn btnss" href="room2">Room 2</a></div>
         <br>
         <div id="room3"><a class="btn btnss" href="room3">Room 3</a></div>
-    </div>
-        {{#if currentUser}}
-            <h2>List of Players</h2>
-                <ul>
-                    {{#each playerNames}}
-                        <li>{{username}}</li>
-                    {{/each}}
-                </ul>
-        {{/if}}
-    </div>
-
+    
     <div class="well-grey col-xs-6 col-xs-offset-3">
         <div class="row col-xs-10 col-xs-offset-3">
             <form class="form-horizontal" role="form" id="postForm">
@@ -137,10 +127,8 @@
     <div id="response">Thank you for the question. We'll get back to you ASAP. Please enjoy the rest of your time viewing our app!</div>
 </template>
 
-<!-- Based on code found on github.com/zubairv85/HTML5-Checkers -->
-
 <template name="room1">
-    <div class="game-body" onResize="drawGame()">
+    <div onResize="drawGame()">
         <canvas id="board">
         </canvas>
         <div id="score_card"></div>
@@ -152,7 +140,7 @@
 </template>
 
 <template name="room2">
-    <div class="game-body" onResize="drawGame()">
+    <div onResize="drawGame()">
         <canvas id="board">
         </canvas>
         <div id="score_card"></div>
@@ -164,7 +152,7 @@
 </template>
 
 <template name="room3">
-    <div class="game-body" onResize="drawGame()">
+    <div onResize="drawGame()">
         <canvas id="board">
         </canvas>
         <div id="score_card"></div>
