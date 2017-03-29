@@ -66,4 +66,23 @@ if (Meteor.isClient) {
         Posts.remove(curPostId);
     }
   });
+    
+  Template.hello.onCreated(function helloOnCreated(){
+                           this.increment = new ReactiveVar(0);
+                           });
+    
+    Template.hello.helpers({
+        incremnt : function inc(){
+            return Template.instance().increment.get();
+        }
+    });
+    
+   Template.hello.events({
+       'click .bt' : function(event, instance) {
+instance.increment.set(instance.increment.get() + 1); 
+       }
+   }); 
 }
+
+
+
