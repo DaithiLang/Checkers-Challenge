@@ -113,8 +113,8 @@ input[type=checkbox]{
 .editBox input[type=checkbox]:checked + label:before{
     content: "Save";
     color: #333;
-     cursor: : hand;
-
+     cursor:hand;
+}
 
 #form{
    color: black;
@@ -122,6 +122,41 @@ text-align: center;
 padding: 50px; 
 min-height: 310px;  
 font-size: 150%;
-background-color:blanchedalmond ;  
+background-color:blanchedalmond ; 
+ margin-left: 450px;
+ margin-right: 450px;
 
+}
+
+#response{
+color: black;
+text-align: center;
+padding: 50px;  
+font-size: 175%;
+background-color:blanchedalmond ; 
+margin-left: 400px;
+margin-right: 400px;
+margin-top: 195px;
+margin-bottom: 300px;
+}
+
+#rooms{
+   color: black;
+text-align: center;
+padding: 50px; 
+background-color:blanchedalmond ; 
+margin-left: 600px;
+margin-right:600px;
+}
+
+#room1{
+    align-content: left;
+}
+
+#room2{
+align-content: center;
+}
+
+#room3{
+   align-content: right; 
 }
