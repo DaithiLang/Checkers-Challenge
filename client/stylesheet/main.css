@@ -21,15 +21,15 @@ color: white;
 color: white;
 }
 .well-grey{
-  background-color: grey;
-   margin-top: 1cm;
+    background-color: grey;
+    margin-top: 1cm;
     border-radius: 5px;
 }
 #inputPost{
-  margin-top: 1cm;
+    margin-top: 1cm;
 }
 .btnss{
-  color: #fff;
+    color: #fff;
     background-color: #333;
     border-color: #ccc;
 }
@@ -40,8 +40,7 @@ body {
 }
 
 h1 {
-color: white
-
+    color: white
 }
 
 
@@ -126,61 +125,62 @@ input[type=checkbox]{
     cursor: pointer;
     cursor: hand;
 }
-.editBox label:before{
+
+.editBox label:before {
     content: "\f040";
-    font-family: FontAwsome;
+    font-family: FontAwesome;
     color: #3498db;
-     cursor: hand;
+    cursor: hand;
 }
-.editBox input[type=checkbox]:checked + label:before{
+.editBox input[type=checkbox]:checked + label:before {
     content: "Save";
     color: #333;
-     cursor:hand;
+    cursor: hand;
 }
 
-#form{
-   color: black;
-text-align: center;
-padding: 50px;
-min-height: 310px;
-font-size: 150%;
-background-color:white ;
- margin-left: 450px;
- margin-right: 450px;
+#form {
+    color: black;
+    text-align: center;
+    padding: 50px;
+    min-height: 310px;
+    font-size: 150%;
+    background-color:white ;
+    margin-left: 450px;
+    margin-right: 450px;
 
 }
 
-#response{
-color: black;
-text-align: center;
-padding: 50px;
-font-size: 175%;
-background-color:white ;
-margin-left: 400px;
-margin-right: 400px;
-margin-top: 195px;
-margin-bottom: 300px;
+#response {
+    color: black;
+    text-align: center;
+    padding: 50px;
+    font-size: 175%;
+    background-color:white ;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-top: 195px;
+    margin-bottom: 300px;
 }
 
-#rooms{
-   color: black;
-text-align: center;
-padding: 50px;
-background-color:white ;
-margin-left: 600px;
-margin-right:600px;
+#rooms {
+    color: black;
+    text-align: center;
+    padding: 50px;
+    background-color: white ;
+    margin-left: 600px;
+    margin-right: 600px;
 }
 
-#room1{
+#room1 {
     align-content: left;
 }
 
-#room2{
+#room2 {
     align-content: center;
 }
 
-#room3{
-   align-content: right; 
+#room3 {
+    align-content: right;
 }
 
 
