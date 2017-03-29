@@ -1,4 +1,4 @@
-
+/* Based on code found on github.com/zubairv85/HTML5-Checkers */
 
 // Declare game constants
 var SQUARE_SIZE = 100;
