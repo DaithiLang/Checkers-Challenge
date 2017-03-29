@@ -21,7 +21,7 @@
         Liam O'Neill<br>
         Alan Fahy<br>
         Ciara McEllistrim</p>
-    </div>
+        </div>
 </template>
 
 <template name="findUs">
@@ -39,17 +39,26 @@
 </template>
 
 <template name="contactUs">
-    <form action="/action" id="form">
-  First name:<br>
-  <input type="text" name="firstname" placeholder="John">
-  <br>
-  Last name:<br>
-  <input type="text" name="lastname" placeholder="Doe">
-  <br><br>
-    <textarea rows="4" cols="50" >If you have any questions or queries please leave your name and email followed with you message in this box and we will get make to you as soon as possible. 
-       </textarea><br>
-  <input type="submit" value="Submit">
-</form> 
+    <div style="align:center">
+  <form class="form-inline">
+    <div class="form-group">
+      <label class="sr-only" for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+    </div>
+   
+      <br><br>
+        <textarea rows="4" cols="50" >If you have any questions or queries please leave your name and email followed with you message in this box and we will get make to you as soon as possible. 
+        </textarea><br>  
+      <div class="checkbox">
+      <label style= "color:white"><input type="checkbox" > Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
 </template>
 
 <template name="game">
@@ -63,14 +72,14 @@
         <div id="room3"><a class="btn btn-default" href="room3">Room 3</a></div>
     </div>
         {{#if currentUser}}
-            <h2>List of Players</h2>
+            <h2 id="form">List of Players</h2>
                 <ul>
                     {{#each playerNames}}
                         <li>{{username}}</li>
                     {{/each}}
                 </ul>
         {{/if}}
- </div>
+    </div>
 
     <div class="well col-xs-6 col-xs-offset-3">
         <div class="row col-xs-10 col-xs-offset-3">
@@ -136,8 +145,6 @@
 <template name="action">
     <div id="response">Thank you for the question. We'll get back to you ASAP. Please enjoy the rest of your time viewing our app!</div>
 </template>
-
-<!-- Based on code found on github.com/zubairv85/HTML5-Checkers -->
 
 <template name="room1">
     <div onResize="drawGame()">
