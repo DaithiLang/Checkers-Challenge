@@ -16,10 +16,21 @@
 .navbar-default .navbar-nav > li > a:focus {
     color: white;
 }
-
-
+.well-grey{
+  background-color: grey;
+   margin-top: 1cm;
+    border-radius: 5px;
+}
+#inputPost{
+  margin-top: 1cm;
+}
+.btnss{
+  color: #fff;
+    background-color: #333;
+    border-color: #ccc;
+}
 body {
-    background-image: url("images/checkerboard_red.png");
+    background-image: url("images/black.JPG");
     background-size: 300% 600%;
 }
 
@@ -33,7 +44,7 @@ h1 {
     text-align: center;
     padding: 50px;
     min-height: 310px;
-    background-color:blanchedalmond ;
+    background-color:white ;
 }
 
 p {
@@ -42,12 +53,12 @@ p {
     padding: 50px;
     min-height: 310px;
     font-size: 150%;
-    background-color:blanchedalmond ;
+    background-color:white ;
 }
 
 #id1 {
     padding: 10px;
-    background-color:blanchedalmond;
+    background-color:white;
     float:left;
 }
 
@@ -86,7 +97,7 @@ h2 {
 }
 
 #text {
-    background-color:blanchedalmond;
+    background-color:white;
     margin-left: 450px;
     margin-right: 485px;
     text-align: center;
@@ -123,10 +134,10 @@ input[type=checkbox] {
 #form{
    color: black;
 text-align: center;
-padding: 50px; 
-min-height: 310px;  
+padding: 50px;
+min-height: 310px;
 font-size: 150%;
-background-color:blanchedalmond ; 
+background-color:white ;
  margin-left: 450px;
  margin-right: 450px;
 
@@ -135,9 +146,9 @@ background-color:blanchedalmond ;
 #response{
 color: black;
 text-align: center;
-padding: 50px;  
+padding: 50px;
 font-size: 175%;
-background-color:blanchedalmond ; 
+background-color:white ;
 margin-left: 400px;
 margin-right: 400px;
 margin-top: 195px;
@@ -147,8 +158,8 @@ margin-bottom: 300px;
 #rooms{
    color: black;
 text-align: center;
-padding: 50px; 
-background-color:blanchedalmond ; 
+padding: 50px;
+background-color:white ;
 margin-left: 600px;
 margin-right:600px;
 }
@@ -162,7 +173,7 @@ align-content: center;
 }
 
 #room3{
-   align-content: right; 
+   align-content: right;
 }
 
 .test {

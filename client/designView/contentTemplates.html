@@ -46,21 +46,21 @@
         Last name:<br>
         <input type="text" name="lastname" placeholder="Doe">
         <br><br>
-        <textarea rows="4" cols="50" >If you have any questions or queries please leave your name and email followed with you message in this box and we will get make to you as soon as possible. 
+        <textarea rows="4" cols="50" >If you have any questions or queries please leave your name and email followed with you message in this box and we will get make to you as soon as possible.
         </textarea><br>
         <input type="submit" value="Submit">
-    </form> 
+    </form>
 </template>
 
 <template name="game">
     <div class="bodytext">
         <p>Welcome To Checkers Challenge. <br>I hope you enjoy our very first game applcation. This has been in the making for some time now and I hope you enjoy what we have come up with!</p>
     <div id="rooms">
-        <div id="room1"><a class="btn btn-default" href="room1">Room 1</a></div>
+        <div id="room1"><a class="btn btnss" href="room1">Room 1</a></div>
         <br>
-        <div id="room2"><a class="btn btn-default" href="room2">Room 2</a></div>
+        <div id="room2"><a class="btn btnss" href="room2">Room 2</a></div>
         <br>
-        <div id="room3"><a class="btn btn-default" href="room3">Room 3</a></div>
+        <div id="room3"><a class="btn btnss" href="room3">Room 3</a></div>
     </div>
         {{#if currentUser}}
             <h2>List of Players</h2>
@@ -72,7 +72,7 @@
         {{/if}}
     </div>
 
-    <div class="well col-xs-6 col-xs-offset-3">
+    <div class="well-grey col-xs-6 col-xs-offset-3">
         <div class="row col-xs-10 col-xs-offset-3">
             <form class="form-horizontal" role="form" id="postForm">
                 <div class="row">
@@ -82,7 +82,7 @@
                             <label id="charRemainder" for="inputPost">{{charsRemaining}}</label>
                         </div>
                     </div>
-    
+
                     <div class="form-group">
                         <div class="col-xs-9">
                             <button type="submit" class="btn btn-primary">Send</button>
