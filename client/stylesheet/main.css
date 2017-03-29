@@ -1,28 +1,32 @@
+/* CSS declarations go here */
+
+
+
 .navbar-default {
-    background-color: black;
-    border-color: white;
+background-color: black;
+border-color: white;
 }
 .navbar-default .navbar-brand {
-    color: white;
+color: white;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-    color : white;
+color : white;
 }
 .navbar-default .navbar-brand > li > a {
-    color: white;
+color: white;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: white;
+color: white;
 }
 .well-grey{
-  background-color: grey;
-   margin-top: 1cm;
+    background-color: grey;
+    margin-top: 1cm;
     border-radius: 5px;
 }
 #inputPost{
-  margin-top: 1cm;
+    margin-top: 1cm;
 }
 .btnss{
     color: #fff;
@@ -32,12 +36,13 @@
 body {
     background-image: url("images/black.JPG");
     background-size: 300% 600%;
+
 }
 
 h1 {
     color: white
-
 }
+
 
 .bodytext {
     color: black;
@@ -56,43 +61,43 @@ p {
     background-color:white ;
 }
 
-#id1 {
+#id1{
     padding: 10px;
     background-color:white;
     float:left;
 }
 
 h2 {
-    color: black
+color: black
 }
 
-#id2 {
+#id2{
     width:200px;
     height:200px;
     border:10px;
     margin-top: 20px;
 }
 
-#para {
+#para{
     margin-right: 20px;
     width: 30%;
     float:right;
 }
 
-#fullPara {
+#fullPara{
     float:center;
     margin-right: 20px;
     margin-left: 20px;
     margin-bottom:20px;
 }
 
-#img {
+#img{
     position: relative;
     width: 30%;
     margin-left: 20px;
 }
 
-#loc {
+#loc{
     text-align: center;
 }
 
@@ -103,15 +108,31 @@ h2 {
     text-align: center;
 }
 
-input[type=checkbox] {
+input[type=checkbox]{
     visibility: ;
 }
+.likeBox label:before{
+    content: "\f08a";
+    font-family: FontAwsome;
+    color: #3498db;
+    cursor: pointer;
+    cursor: hand;
+}
+.likeBox input[type=checkBox]:checked + label:before{
+    content: "\f004";
+    font-family: FontAwsome;
+    color: #333;
+    cursor: pointer;
+    cursor: hand;
+}
+
+<<<<<<< HEAD
+=======
 .editBox label:before {
-    content: "\f040"
+    content: "\f040";
     font-family: FontAwesome;
     color: #3498db;
     cursor: hand;
-
 }
 .editBox input[type=checkbox]:checked + label:before {
     content: "Save";
@@ -120,47 +141,47 @@ input[type=checkbox] {
 }
 
 
-#form{
-   color: black;
-text-align: center;
-padding: 50px;
-min-height: 310px;
-font-size: 150%;
-background-color:white ;
- margin-left: 450px;
- margin-right: 450px;
+#form {
+    color: black;
+    text-align: center;
+    padding: 50px;
+    min-height: 310px;
+    font-size: 150%;
+    background-color:white ;
+    margin-left: 450px;
+    margin-right: 450px;
 
 }
 
-#response{
-color: black;
-text-align: center;
-padding: 50px;
-font-size: 175%;
-background-color:white ;
-margin-left: 400px;
-margin-right: 400px;
-margin-top: 195px;
-margin-bottom: 300px;
+#response {
+    color: black;
+    text-align: center;
+    padding: 50px;
+    font-size: 175%;
+    background-color:white ;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-top: 195px;
+    margin-bottom: 300px;
 }
 
-#rooms{
-   color: black;
-text-align: center;
-padding: 50px;
-background-color:white ;
-margin-left: 600px;
-margin-right:600px;
+#rooms {
+    color: black;
+    text-align: center;
+    padding: 50px;
+    background-color: white ;
+    margin-left: 600px;
+    margin-right: 600px;
 }
 
-#room1{
+#room1 {
     align-content: left;
 }
 
-#room2{
-align-content: center;
+#room2 {
+    align-content: center;
 }
 
-#room3{
-   align-content: right;
+#room3 {
+    align-content: right;
 }
