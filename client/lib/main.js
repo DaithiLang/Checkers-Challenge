@@ -5,13 +5,13 @@ if (Meteor.isClient) {
   Template.game.helpers({
     playersInRoom1 : function() {
       return playersInRoom1;
-    }
+    },
     playersInRoom2 : function() {
       return playersInRoom2;
-    }
+    },
     playersInRoom3 : function() {
       return playersInRoom3;
-    }
+    },
     charsRemaining : function() {
       return Session.get('CharactersRemaining');
     },
@@ -47,13 +47,13 @@ if (Meteor.isClient) {
   Template.game.events({
     'click #room1' : function(event) {
       playersInRoom1++;
-    }
+    },
     'click #room2' : function(event) {
       playersInRoom2++;
-    }
+    },
     'click #room3' : function(event) {
       playersInRoom3++;
-    }
+    },
     'keyup #inputPost' : function(event) {
       var inputText = event.target.value;
       Session.set("CharactersRemaining", (140 - inputText.length));
