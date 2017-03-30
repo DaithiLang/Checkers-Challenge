@@ -74,7 +74,7 @@ Meteor.startup(() => {
   })
   Meteor.publish('gameInfo', function() {
     return Games.find();
-  }
+  });
   Meteor.publish('userPosts', function(){
     return Posts.find();
   });
