@@ -24,6 +24,15 @@ if (Meteor.isClient) {
         return playersInRoom3;
       }
     },
+    isRoom1Full : function() {
+      return playersInRoom1 > 1;
+    },
+    isRoom2Full : function() {
+      return playersInRoom2 > 1;
+    },
+    isRoom3Full : function() {
+      return playersInRoom3 > 1;
+    },
     charsRemaining : function() {
       return Session.get('CharactersRemaining');
     },
@@ -58,13 +67,13 @@ if (Meteor.isClient) {
   });
   Template.game.events({
     'click #room1' : function(event) {
-      playersInRoom1++;
+      if (playersInRoom1 < 2) playersInRoom1++;
     },
     'click #room2' : function(event) {
-      playersInRoom2++;
+      if (playersInRoom2 < 2) playersInRoom2++;
     },
     'click #room3' : function(event) {
-      playersInRoom3++;
+      if (playersInRoom3 < 2) playersInRoom3++;
     },
     'keyup #inputPost' : function(event) {
       var inputText = event.target.value;
