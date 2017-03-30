@@ -72,7 +72,10 @@ Meteor.startup(() => {
       Posts.update({_id:postObj.id}, {$set: {post : postObj.post}});
     }
   })
+  Meteor.publish('gameInfo', function() {
+    return Games.find();
+  }
   Meteor.publish('userPosts', function(){
-      return Posts.find();
+    return Posts.find();
   });
 });

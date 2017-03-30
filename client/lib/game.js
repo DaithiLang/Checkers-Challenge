@@ -1,5 +1,7 @@
 /* Based on code found on github.com/zubairv85/HTML5-Checkers */
 
+Meteor.subscribe('gameInfo');
+
 // Declare game constants
 var SQUARE_SIZE = 100;
 var BOARD_WIDTH = SQUARE_SIZE * 8;
