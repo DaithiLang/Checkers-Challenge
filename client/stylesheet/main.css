@@ -47,16 +47,15 @@ h1 {
 .bodytext {
     color: black;
     text-align: center;
-    padding: 50px;
-    min-height: 310px;
+    padding: 30px;
+    min-height: 150px;
     background-color:white ;
 }
 
 p {
     color: black;
     text-align: center;
-    padding: 50px;
-    min-height: 310px;
+    padding: 0px;
     font-size: 150%;
     background-color:white ;
 }
@@ -172,15 +171,16 @@ input[type=checkbox]{
 }
 
 #room1 {
-    align-content: left;
+    float: left;
+    margin: 0;	
 }
 
 #room2 {
-    align-content: center;
+    float: center;
 }
 
 #room3 {
-    align-content: right;
+    float: right;
 }
 
 
