@@ -502,7 +502,7 @@ function checkForWin()
         // Do however reset the number of players in the room
         var webAddress = window.location.href
         var roomNumber = webAddress.charAt(webAddress.length - 1); // Last char.
-        switch {
+        switch (roomNumber) {
         case '1' :
             playersInRoom1 = 0;
             break;
