@@ -65,7 +65,9 @@ h1 {
     min-height: 150px;
     background-color:white ;
 }
-
+#img2{
+  margin-left: 300px;
+}
 p {
     color: white;
     text-align: center;
