@@ -3,13 +3,22 @@ Meteor.subscribe('playerNames');
 if (Meteor.isClient) {
   Meteor.subscribe('userPosts');
   Template.game.helpers({
-    charsRemaining: function () {
+    playersInRoom1 : function() {
+      return playersInRoom1;
+    },
+    playersInRoom2 : function() {
+      return playersInRoom2;
+    },
+    playersInRoom3 : function() {
+      return playersInRoom3;
+    },
+    charsRemaining : function() {
       return Session.get('CharactersRemaining');
     },
-    posts : function () {
+    posts : function() {
       return Posts.find({}, {sort: {date: -1}});
     },
-    timeDiff : function (postDate) {
+    timeDiff : function(postDate) {
       var timeDiff = new Date().getTime() - postDate.getTime();
       var diffDays = Math.floor(timeDiff / (1000 * 3600 * 24));
       var diffHours = Math.floor(timeDiff  / (1000 * 3600));
@@ -25,18 +34,27 @@ if (Meteor.isClient) {
       else if(diffSecs > 0)
         return ("about " + diffSecs + "s ago");
     },
-    userCreated : function (createdBy) {
+    userCreated : function(createdBy) {
       if(createdBy == Meteor.userId())
         return true;
       else
         return false;
     }
   });
-  Template.game.onRendered(function () {
+  Template.game.onRendered(function() {
     $("#postForm").validate();
   });
   Template.game.events({
-    'keyup #inputPost': function (event) {
+    'click #room1' : function(event) {
+      playersInRoom1++;
+    },
+    'click #room2' : function(event) {
+      playersInRoom2++;
+    },
+    'click #room3' : function(event) {
+      playersInRoom3++;
+    },
+    'keyup #inputPost' : function(event) {
       var inputText = event.target.value;
       Session.set("CharactersRemaining", (140 - inputText.length));
     },
@@ -48,9 +66,9 @@ if (Meteor.isClient) {
         Meteor.call('insertPost', post);
     },
     'click .editBox input' : function (event) {
-      if(event.toElement.checked){
-        $('#edit'+this._id).removeClass('hidden');
-        $('#post'+this._id).hide();
+      if(event.toElement.checked) {
+        $('#edit' + this._id).removeClass('hidden');
+        $('#post' + this._id).hide();
       }
       else {
         var post = $('#edit' + this._id).val();
