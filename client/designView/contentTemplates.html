@@ -61,15 +61,36 @@
 </template>
 
 <template name="game">
-    <!--{{#if isRoom1Full}}
+    <!-- The next lines are supposed to disable the buttons if the rooms
+         are full with two players and enable them otherwise.
+         Unfortunately it has no effect. -->
+    {{#if isRoom1Full}}
         <script>
-            $('#room1').firstChild.attr('disabled', true);
+            document.getElementById('room1').firstChild.className += ' disabled';
         </script>
     {{else}}
         <script>
-            $('#room1').firstChild.attr('disabled', false);
+            document.getElementById('room1').firstChild.className = 'btn btnss';
         </script>
-    {{/if}}-->
+    {{/if}}
+    {{#if isRoom2Full}}
+        <script>
+            document.getElementById('room2').firstChild.className += ' disabled';
+        </script>
+    {{else}}
+        <script>
+            document.getElementById('room2').firstChild.className = 'btn btnss';
+        </script>
+    {{/if}}
+    {{#if isRoom3Full}}
+        <script>
+            document.getElementById('room3').firstChild.className += ' disabled';
+        </script>
+    {{else}}
+        <script>
+            document.getElementById('room3').firstChild.className = 'btn btnss';
+        </script>
+    {{/if}}
     <div class="bodytext">
         <p>Welcome To Checkers Challenge.<br>I hope you enjoy our very first game applcation. This has been in the making for some time now and I hope you enjoy what we have come up with!</p>
 
