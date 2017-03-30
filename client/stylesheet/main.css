@@ -115,8 +115,8 @@ color: black
 
 #text {
     background-color:white;
-    margin-left: 450px;
-    margin-right: 485px;
+    margin-left: 468px;
+    margin-right: 468px;
     text-align: center;
 }
 
@@ -162,7 +162,6 @@ color: black
     text-align: center;
     padding: 50px;
     background-color: white ;
-
 }
 
 #room1 {
@@ -175,4 +174,3 @@ color: black
 
 #room3 {
   margin: 10px 5px 0 0;
-}
