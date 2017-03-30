@@ -1,7 +1,9 @@
 
 /* CSS declarations go here */
 
-
+.btn-Position{
+  text-align: center;
+}
 
 .navbar-default {
 background-color: black;
@@ -160,19 +162,17 @@ color: black
     text-align: center;
     padding: 50px;
     background-color: white ;
-    margin-left: 600px;
-    margin-right: 600px;
+
 }
 
 #room1 {
-    float: left;
-    margin: 0;
+    margin: 10px 5px 0 0;
 }
 
 #room2 {
-    float: center;
+  margin: 10px 5px 0 0;
 }
 
 #room3 {
-    float: right;
+  margin: 10px 5px 0 0;
 }
