@@ -496,9 +496,23 @@ function checkForWin()
         // Reset gameInProgress flag
         gameInProgress = false;
         
-        // Prompt user of win and restart game
+        // Prompt user of win 
+        // But unlike the original version of this code we found, do not restart the game
         alert("The winner is " + winner + "!");
-        newGame();
+        // Do however reset the number of players in the room
+        var webAddress = window.location.href
+        var roomNumber = webAddress.charAt(webAddress.length - 1); // Last char.
+        switch (roomNumber) {
+        case '1' :
+            playersInRoom1 = 0;
+            break;
+        case '2' :
+            playersInRoom2 = 0;
+            break;
+        case '3' :
+            playersInRoom3 = 0;
+            break;
+        }
     } else {
         // If noone has won, change the users turn
         if(WHOS_TURN_IS_IT == BLACK) {

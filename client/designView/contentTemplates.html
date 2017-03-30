@@ -39,7 +39,7 @@
 </template>
 
 <template name="contactUs">
-    <div style="float:center">
+    <div class="contactForm">
         <form class="form-inline">
             <div class="form-group">
                 <label class="sr-only" for="email">Email:</label>
@@ -50,8 +50,8 @@
                     <input type="password" class="form-control" id="pwd" placeholder="Enter password">
             </div>
             <br><br>
-            <textarea rows="4" cols="50" >If you have any questions or queries please leave your name and email followed with you message in this box and we will get make to you as soon as possible. 
-            </textarea><br>  
+            <textarea rows="4" cols="50" >If you have any questions or queries please leave your name and email followed with you message in this box and we will get make to you as soon as possible.
+            </textarea><br>
             <div class="checkbox">
                 <label style= "color:white"><input type="checkbox">Remember me</label>
             </div>
@@ -63,17 +63,18 @@
 <template name="game">
     <div class="bodytext">
         <p>Welcome To Checkers Challenge.<br>I hope you enjoy our very first game applcation. This has been in the making for some time now and I hope you enjoy what we have come up with!</p>
-        <div id="rooms" class="center-block">
-            <div id="room1"><a class="btn btn-default" href="room1">Room 1</a> {{playersInRoom1}}/2 players</div>
-           
-            <div id="room2"><a class="btn btn-default" href="room2">Room 2</a> {{playersInRoom2}}/2 players</div>
-            
-            <div id="room3"><a class="btn btn-default" href="room3">Room 3</a> {{playersInRoom3}}/2 players</div>
 
+        <div id="rooms">
+            <div id="room1"><a class="btn btn-default" href="room1">Room 1</a> {{playersInRoom1}}/2 players</div>
+
+            <div id="room2"><a class="btn btn-default" href="room2">Room 2</a> {{playersInRoom2}}/2 players</div>
+
+            <div id="room3"><a class="btn btn-default" href="room3">Room 3</a> {{playersInRoom3}}/2 players</div>
         </div>
     </div>
-	<br>
-    <div class="well col-xs-6 col-xs-offset-3">
+
+
+    <div class="well-grey col-xs-6 col-xs-offset-3">
         <div class="row col-xs-10 col-xs-offset-3">
             <form class="form-horizontal" role="form" id="postForm">
                 <div class="row">
@@ -83,7 +84,7 @@
                             <label id="charRemainder" for="inputPost">{{charsRemaining}}</label>
                         </div>
                     </div>
-    
+
                     <div class="form-group">
                         <div class="col-xs-9">
                             <button type="submit" class="btn btn-primary">Send</button>
@@ -108,7 +109,7 @@
                 </div>
             <div class="row spacer">
                 <input class="form-control hidden" type="text" id="edit{{_id}}" value={{post}}>
-                <div id="post{{_id}} ">
+                <div id="post{{_id}} " class="postText">
                 {{post}}
                     <div class="row spacer">
                         {{#if userCreated (createdBy)}}
@@ -116,7 +117,6 @@
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                 <input type="checkbox" id="editPost{{this._id}}">
                                 <label for="editPost{{this._id}} "></label>
-                                <h6 class="test">Edited</h6>
                             </div>
                             <div class="col-xs-6 deletePost">
                                 <button type="submit" class="btn btn-trash" id="deletePost{{this_id}}">
