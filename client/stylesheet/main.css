@@ -21,6 +21,16 @@ color: white;
 .navbar-default .navbar-nav > li > a:focus {
 color: white;
 }
+.postText{
+  border-left-color: white;
+  font-size: 20px;
+  font-style: oblique;
+  text-align: center;
+}
+.contactForm{
+  text-align: center;
+  margin-top: 150px;
+}
 .well-grey{
     background-color: grey;
     margin-top: 1cm;
@@ -31,8 +41,8 @@ color: white;
 }
 .btnss{
     color: #fff;
-    background-color: #333;
-    border-color: #ccc;
+    background-color: #337ab7;
+    border-color: #337ab7;
 }
 body {
     background-image: url("images/black.JPG");
@@ -54,11 +64,11 @@ h1 {
 }
 
 p {
-    color: black;
+    color: white;
     text-align: center;
     padding: 0px;
     font-size: 150%;
-    background-color:white ;
+    background-color:grey ;
 }
 
 #id1{
@@ -108,27 +118,9 @@ color: black
     text-align: center;
 }
 
-input[type=checkbox]{
-    visibility: ;
-}
-.likeBox label:before{
-    content: "\f08a";
-    font-family: FontAwsome;
-    color: #3498db;
-    cursor: pointer;
-    cursor: hand;
-}
-.likeBox input[type=checkBox]:checked + label:before{
-    content: "\f004";
-    font-family: FontAwsome;
-    color: #333;
-    cursor: pointer;
-    cursor: hand;
-}
 
 .editBox label:before {
-    content: "\f040";
-    font-family: FontAwesome;
+
     color: #3498db;
     cursor: hand;
 }
@@ -137,6 +129,7 @@ input[type=checkbox]{
     color: #333;
     cursor: hand;
 }
+
 
 #form {
     color: black;
@@ -173,7 +166,7 @@ input[type=checkbox]{
 
 #room1 {
     float: left;
-    margin: 0;	
+    margin: 0;
 }
 
 #room2 {
@@ -182,9 +175,4 @@ input[type=checkbox]{
 
 #room3 {
     float: right;
-}
-
-
-.test {
-    visibility: hidden;
 }
