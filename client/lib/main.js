@@ -39,11 +39,11 @@ if (Meteor.isClient) {
 
       if (diffDays > 0)
         return ("about " + diffDays + "d ago");
-      else if(diffHours > 0)
+      else if (diffHours > 0)
         return ("about " + diffHours + "h ago");
-      else if(diffMins > 0 )
+      else if (diffMins > 0 )
         return ("about " + diffMins + "m ago");
-      else if(diffSecs > 0)
+      else if (diffSecs > 0)
         return ("about " + diffSecs + "s ago");
     },
     userCreated : function(createdBy) {
