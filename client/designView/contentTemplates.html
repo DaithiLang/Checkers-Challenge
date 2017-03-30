@@ -109,7 +109,7 @@
                 </div>
             <div class="row spacer">
                 <input class="form-control hidden" type="text" id="edit{{_id}}" value={{post}}>
-                <div id="post{{_id}} ">
+                <div id="post{{_id}} " class="postText">
                 {{post}}
                     <div class="row spacer">
                         {{#if userCreated (createdBy)}}
@@ -117,7 +117,6 @@
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                 <input type="checkbox" id="editPost{{this._id}}">
                                 <label for="editPost{{this._id}} "></label>
-                                <h6 class="test">Edited</h6>
                             </div>
                             <div class="col-xs-6 deletePost">
                                 <button type="submit" class="btn btn-trash" id="deletePost{{this_id}}">
