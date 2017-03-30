@@ -63,11 +63,14 @@
 <template name="game">
     <div class="bodytext">
         <p>Welcome To Checkers Challenge.<br>I hope you enjoy our very first game applcation. This has been in the making for some time now and I hope you enjoy what we have come up with!</p>
-    <div id="rooms">
-        <div id="room1"><a class="btn btn-default" href="room1">Room 1</a></div>
-        <br>
-        <div id="room2"><a class="btn btn-default" href="room2">Room 2</a></div>
-        <br>
+        <div id="rooms">
+            <div id="room1"><a class="btn btn-default" href="room1">Room 1</a>{{playersInRoom1}}/2 players</div>
+            <br>
+            <div id="room2"><a class="btn btn-default" href="room2">Room 2</a>{{playersInRoom2}}/2 players</div>
+            <br>
+            <div id="room3"><a class="btn btn-default" href="room3">Room 3</a>{{playersInRoom3}}/2 players</div>
+        </div>
+    </div>
 
     <div class="well-grey col-xs-6 col-xs-offset-3">
         <div class="row col-xs-10 col-xs-offset-3">
