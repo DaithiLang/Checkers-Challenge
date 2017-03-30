@@ -4,13 +4,25 @@ if (Meteor.isClient) {
   Meteor.subscribe('userPosts');
   Template.game.helpers({
     playersInRoom1 : function() {
-      return playersInRoom1;
+      if (playersInRoom1 > 1) {
+        return 'FULL: ' + playersInRoom1;
+      } else {
+        return playersInRoom1;
+      }
     },
     playersInRoom2 : function() {
-      return playersInRoom2;
+      if (playersInRoom2 > 1) {
+        return 'FULL: ' + playersInRoom2;
+      } else {
+        return playersInRoom2;
+      }
     },
     playersInRoom3 : function() {
-      return playersInRoom3;
+      if (playersInRoom3 > 1) {
+        return 'FULL: ' + playersInRoom3;
+      } else {
+        return playersInRoom3;
+      }
     },
     charsRemaining : function() {
       return Session.get('CharactersRemaining');
@@ -27,11 +39,11 @@ if (Meteor.isClient) {
 
       if (diffDays > 0)
         return ("about " + diffDays + "d ago");
-      else if(diffHours > 0)
+      else if (diffHours > 0)
         return ("about " + diffHours + "h ago");
-      else if(diffMins > 0 )
+      else if (diffMins > 0 )
         return ("about " + diffMins + "m ago");
-      else if(diffSecs > 0)
+      else if (diffSecs > 0)
         return ("about " + diffSecs + "s ago");
     },
     userCreated : function(createdBy) {
