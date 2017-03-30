@@ -28,13 +28,14 @@ color: white;
   font-size: 20px;
   font-style: oblique;
   text-align: center;
+  background-color: white;
 }
 .contactForm{
   text-align: center;
   margin-top: 150px;
 }
 .well-grey{
-    background-color: grey;
+    background-color: lightblue;
     margin-top: 1cm;
     border-radius: 5px;
 }
@@ -131,7 +132,17 @@ color: black
     color: #333;
     cursor: hand;
 }
-
+.well-rounded {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: lightblue;
+    border: 1px solid #e3e3e3;
+    border-radius: 30px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    margin-top: 19px;
+}
 
 #form {
     color: black;
