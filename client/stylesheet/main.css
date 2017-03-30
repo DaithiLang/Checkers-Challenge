@@ -103,8 +103,8 @@ color: black
 
 #text {
     background-color:white;
-    margin-left: 450px;
-    margin-right: 485px;
+    margin-left: 468px;
+    margin-right: 468px;
     text-align: center;
 }
 
@@ -167,21 +167,18 @@ input[type=checkbox]{
     text-align: center;
     padding: 50px;
     background-color: white ;
-    margin-left: 600px;
-    margin-right: 600px;
 }
 
 #room1 {
-    float: left;
-    margin: 0;	
+    margin-left: 10px;	
 }
 
 #room2 {
-    float: center;
+    margin-left: 200px;
 }
 
 #room3 {
-    float: right;
+    margin-right: 100px; 
 }
 
 
