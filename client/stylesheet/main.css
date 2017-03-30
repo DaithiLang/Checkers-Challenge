@@ -27,6 +27,10 @@ color: white;
   font-style: oblique;
   text-align: center;
 }
+.contactForm{
+  text-align: center;
+  margin-top: 150px;
+}
 .well-grey{
     background-color: grey;
     margin-top: 1cm;
