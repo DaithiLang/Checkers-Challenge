@@ -370,6 +370,9 @@ function dropPiece(e)
 
     // Set the piece being moved flag to false
     pieceBeingMoved = false;
+    
+    // We need to insert() data, as an array of strings, into the
+    // currentBoard attribute of the Mongo Games collection here.
 }
 
 function checkDiagonalMove()

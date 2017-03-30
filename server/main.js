@@ -25,49 +25,6 @@ Meteor.startup(() => {
         }
       );
     },
-    'likePost': function(postId) {
-      console.log('liked post');
-      var update = true;
-      Posts.update(
-        { _id: postId },
-        { $addToSet: { "likes.users": this.userId } }
-      ),
-      function(error, result) {
-        if (error) {
-          update = false;
-        }
-        if (result) {
-          update = true;
-        }
-      };
-      if(update) (
-        Posts.update(
-          { _id: postId }
-        ),
-        { $inc: {"likes.totalLikes": 1 } }),
-        function (error, result) {
-          if (error) console.log(error);
-          if (result) console.log(result);
-        }
-      },
-    'unlikePost':function(postId) {
-      Posts.update(
-        { _id:postId },
-        { $inc : { "likes.totalLikes": - 1 } }
-      ),
-      function (error, result){
-        if (error) console.log(error);
-        if (result) console.log(result);
-      };
-      Post.update(
-        { _id: postId },
-        { $pop : { "likes.users" : this.userId } }
-      ),
-      function (error, result) {
-        if (error) console.log(error);
-        if (result) console.log(result);
-      };
-    },
     'updatePost' : function(postObj) {
       Posts.update({_id:postObj.id}, {$set: {post : postObj.post}});
     }
